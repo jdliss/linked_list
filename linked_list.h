@@ -7,7 +7,8 @@ class LinkedList {
 public:
   Node* head;
 
-  LinkedList();
+  LinkedList(string);
+
   void printList();
   void printList(Node*);
 
