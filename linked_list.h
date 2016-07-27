@@ -1,5 +1,6 @@
 #include "node.h"
 
+using namespace std;
 
 class LinkedList {
 
@@ -8,13 +9,13 @@ public:
 
   LinkedList();
   void printList();
-  void printListHelper(Node*);
+  void printList(Node*);
 
   void addNode(string);
-  void addNodeHelper(string, Node*);
+  void addNode(string, Node*);
 
   Node* find(string);
-  Node* findNodeHelper(string, Node*);
+  Node* find(string, Node*);
 
   void deleteNode(string);
   void findAndDeleteNode(string, Node*);
