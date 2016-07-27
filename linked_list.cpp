@@ -1,21 +1,26 @@
+#include <sstream>
+#include <vector>
 #include "linked_list.h"
 
 LinkedList::LinkedList()
 {
-  this->head.data = "";
-  this->head.childPtr = nullptr;
+  this->head->data = "";
+  this->head->childPtr = NULL;
 }
 
-void LinkedList::printList()
-{
-  if (this->head.data != "")
-  {
-    cout << this->head.data << endl;
-    if (this->head.childPtr)
-      printListHelper(this->head.childPtr);
-  }
-  else
-    cout << "Empty List" << endl;
+// void LinkedList::printList()
+// {
+//   if (this->head.data != "")
+//   {
+//     cout << this->head.data << endl;
+//     if (this->head.childPtr) printListHelper(this->head.childPtr);
+//   }
+//   else
+//     cout << "Empty List" << endl;
+// }
+
+void LinkedList::printList() {
+  if (this->head.data !=)
 }
 
 void LinkedList::printListHelper(Node* current)
@@ -122,6 +127,81 @@ void LinkedList::insertAfter(string toInsert, string afterData)
     priorNode->childPtr = toInsertNode;
   }
   else
-    cout << "Could not find node to insert afterData: '" <<
-            afterData << "' did not match any node data." << endl;
+    cout << "Could not find node to insert afterData: '"
+         << afterData << "' did not match any node data." << endl;
+}
+
+string LinkedList::toString()
+{
+  string list = "";
+  string result;
+
+  if (this->head.data != "" && !(this->head.childPtr))
+    return this->head.data;
+  else if (this->head.data != "")
+  {
+    result = toStringHelper(list, &this->head);
+    return result.substr(0, result.size()-1);
+  }
+  else
+  {
+    string empty = "Empty list";
+    return empty;
+  }
+}
+
+string LinkedList::toStringHelper(string list, Node* current)
+{
+  list += current->data + ", ";
+
+  if (current->childPtr)
+    return toStringHelper(list, current->childPtr);
+  else
+    return list.substr(0, list.size()-1);
+}
+
+string LinkedList::pop()
+{
+  if (this->head.data != "")
+  {
+    if (this->head.childPtr)
+      return popHelper(&this->head);
+    else
+      return this->head.data;
+  }
+
+  else
+    return "Empty list";
+
+}
+
+string LinkedList::popHelper(Node* current)
+{
+  if (current->childPtr->childPtr)
+    return popHelper(current->childPtr);
+  else
+  {
+    string toReturn = current->childPtr->data;
+    current->childPtr = nullptr;
+    return toReturn;
+  }
+}
+
+int LinkedList::count()
+{
+  int count = 0;
+  if (this->head.data == "")
+    return count;
+  else if (this->head.childPtr)
+    return 1 + countHelper(this->head.childPtr);
+  else
+    return count + 1;
+}
+
+int LinkedList::countHelper(Node* current)
+{
+  if (current->childPtr)
+    return 1 + countHelper(current->childPtr);
+  else
+    return 1;
 }

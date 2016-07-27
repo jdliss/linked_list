@@ -1,9 +1,11 @@
 #include "node.h"
 
 
-class LinkedList
-{
+class LinkedList {
+
 public:
+  Node* head;
+
   LinkedList();
   void printList();
   void printListHelper(Node*);
@@ -22,5 +24,12 @@ public:
   Node* findParent(string);
   Node* findParentHelper(string, Node*);
 
-  Node head;
+  string toString();
+  string toStringHelper(string, Node*);
+
+  string pop();
+  string popHelper(Node*);
+
+  int count();
+  int countHelper(Node*);
 };

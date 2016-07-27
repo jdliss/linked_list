@@ -1,12 +1,8 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
-
-class Node
-{
-public:
-  string data;
+class Node {
+ public:
+  std::string data;
   Node* childPtr;
 };
