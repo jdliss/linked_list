@@ -12,17 +12,14 @@ int main() {
   */
 
   LinkedList list = LinkedList("first node");
-
-  list.printList();
-   cout << endl;
   list.addNode("second node");
-  // list.addNode("third node");
-  // list.addNode("fourth node");
-  // list.addNode("fifth node");
-  // list.addNode("sixth node");
-  // list.addNode("seventh node");
-  // list.addNode("eighth node");
-  // list.printList();
+  list.addNode("third node");
+  list.addNode("fourth node");
+  list.addNode("fifth node");
+  list.addNode("sixth node");
+  list.addNode("seventh node");
+  list.addNode("eighth node");
+  list.printList();
 
   //  cout << endl << "looking for fourth node:" << endl;
   //  cout << "found: " << list.find("fourth node")->data << endl << endl;

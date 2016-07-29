@@ -3,8 +3,7 @@
 #include "linked_list.h"
 
 LinkedList::LinkedList(string data) {
-  this->head->data = data;
-  this->head->childPtr = NULL;
+  this->head = new Node(data);
 }
 
 void LinkedList::printList() {
@@ -17,7 +16,7 @@ void LinkedList::printList() {
 
 void LinkedList::printList(Node* current) {
   cout << current->data << endl;
-  if (current->childPtr) printList(current->childPtr);
+  if (current->childPtr != NULL) printList(current->childPtr);
 }
 
 void LinkedList::addNode(string data) {

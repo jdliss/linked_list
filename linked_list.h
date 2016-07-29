@@ -15,23 +15,23 @@ public:
   void addNode(string);
   void addNode(string, Node*);
 
-  Node* find(string);
-  Node* find(string, Node*);
+  // Node* find(string);
+  // Node* find(string, Node*);
 
-  void deleteNode(string);
-  void findAndDeleteNode(string, Node*);
+  // void deleteNode(string);
+  // void findAndDeleteNode(string, Node*);
 
-  void insertAfter(string toInsert, string after);
+  // void insertAfter(string toInsert, string after);
 
-  Node* findParent(string);
-  Node* findParentHelper(string, Node*);
+  // Node* findParent(string);
+  // Node* findParentHelper(string, Node*);
 
-  string toString();
-  string toStringHelper(string, Node*);
+  // string toString();
+  // string toStringHelper(string, Node*);
 
-  string pop();
-  string popHelper(Node*);
+  // string pop();
+  // string popHelper(Node*);
 
-  int count();
-  int countHelper(Node*);
+  // int count();
+  // int countHelper(Node*);
 };
